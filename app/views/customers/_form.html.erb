@@ -16,8 +16,20 @@
           <%= form.text_field :name, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :dateOfBirth, class: label_class %>
-          <%= form.datetime_field :dateOfBirth, class: input_class %>
+        <%= form.label :gender, class: label_class %>
+          <%= form.text_field :gender, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :date_Of_Birth, class: label_class %>
+          <%= form.datetime_field :date_Of_Birth, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :email, class: label_class %>
+          <%= form.text_field :email, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :phone_number, class: label_class %>
+          <%= form.number_field :phone_number, class: input_class %>
       </div>
   <div class="mb-6">
         <%= form.label :address, class: label_class %>

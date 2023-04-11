@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_05_044807) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_094453) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -68,6 +68,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_044807) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "infomations", force: :cascade do |t|
+    t.string "customer_name"
+    t.datetime "date_of_birth"
+    t.string "email"
+    t.integer "phone_number"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "orderDetails"
     t.string "trackingNumber"
@@ -75,6 +85,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_044807) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_orders_on_product_id"
+  end
+
+  create_table "payment_informations", force: :cascade do |t|
+    t.integer "invoice_number"
+    t.string "type"
+    t.datetime "payment_date", precision: nil
+    t.integer "infomation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["infomation_id"], name: "index_payment_informations_on_infomation_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -85,6 +105,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_044807) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_payments_on_customer_id"
+  end
+
+  create_table "product_infomations", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "size"
+    t.integer "quantity"
+    t.float "price"
+    t.datetime "order_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -114,5 +145,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_044807) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "orders", "products"
+  add_foreign_key "payment_informations", "infomations"
   add_foreign_key "payments", "customers"
 end

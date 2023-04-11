@@ -1,0 +1,45 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Customer_infomation</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to customer_infomations_path, class: button_class(theme: "transparent") do %>
+      All Customer_infomations
+      <% end %>
+      <%= link_to edit_customer_infomation_path(@customer_infomation), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Name:</p>
+        <p><%= @customer_infomation.name %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Date of birth:</p>
+        <p><%= @customer_infomation.date_of_birth %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Gender:</p>
+        <p><%= @customer_infomation.gender %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Email:</p>
+        <p><%= @customer_infomation.email %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Citizen identification:</p>
+        <p><%= @customer_infomation.citizen_identification %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Phone number:</p>
+        <p><%= @customer_infomation.phone_number %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Address:</p>
+        <p><%= @customer_infomation.address %></p>
+      </li>
+  </ul>
+</div>

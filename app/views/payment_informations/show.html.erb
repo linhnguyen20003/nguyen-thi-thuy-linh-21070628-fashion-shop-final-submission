@@ -1,0 +1,33 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Payment_information</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to payment_informations_path, class: button_class(theme: "transparent") do %>
+      All Payment_informations
+      <% end %>
+      <%= link_to edit_payment_information_path(@payment_information), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Invoice number:</p>
+        <p><%= @payment_information.invoice_number %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Type:</p>
+        <p><%= @payment_information.type %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Payment date:</p>
+        <p><%= @payment_information.payment_date %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Infomation:</p>
+        <p><%= @payment_information.infomation %></p>
+      </li>
+  </ul>
+</div>

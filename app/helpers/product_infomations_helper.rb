@@ -1,0 +1,2 @@
+module ProductInfomationsHelper
+end

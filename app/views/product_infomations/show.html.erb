@@ -1,0 +1,41 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Product_infomation</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to product_infomations_path, class: button_class(theme: "transparent") do %>
+      All Product_infomations
+      <% end %>
+      <%= link_to edit_product_infomation_path(@product_infomation), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Name:</p>
+        <p><%= @product_infomation.name %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Description:</p>
+        <p><%= @product_infomation.description %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Size:</p>
+        <p><%= @product_infomation.size %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Quantity:</p>
+        <p><%= @product_infomation.quantity %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Price:</p>
+        <p><%= @product_infomation.price %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Order date:</p>
+        <p><%= @product_infomation.order_date %></p>
+      </li>
+  </ul>
+</div>
