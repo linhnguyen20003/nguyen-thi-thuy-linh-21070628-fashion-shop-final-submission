@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :order_informations
   resources :product_infomations
   resources :payment_informations
   resources :infomations

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_094453) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_134652) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -76,6 +76,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_094453) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_informations", force: :cascade do |t|
+    t.integer "order_status_code"
+    t.datetime "date_order_placed"
+    t.integer "information_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["information_id"], name: "index_order_informations_on_information_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -144,6 +153,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_094453) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "order_informations", "information"
   add_foreign_key "orders", "products"
   add_foreign_key "payment_informations", "infomations"
   add_foreign_key "payments", "customers"

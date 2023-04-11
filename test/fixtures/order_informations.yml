@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_status_code: 1
+  date_order_placed: 2023-04-11 20:46:52
+  information: one
+
+two:
+  order_status_code: 1
+  date_order_placed: 2023-04-11 20:46:52
+  information: two
