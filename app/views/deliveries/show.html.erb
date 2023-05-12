@@ -1,0 +1,33 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Delivery</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to deliveries_path, class: button_class(theme: "transparent") do %>
+      All Deliveries
+      <% end %>
+      <%= link_to edit_delivery_path(@delivery), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Cost:</p>
+        <p><%= @delivery.cost %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Shipping method:</p>
+        <p><%= @delivery.shipping_method %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Date:</p>
+        <p><%= @delivery.date %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Order information:</p>
+        <p><%= @delivery.order_information %></p>
+      </li>
+  </ul>
+</div>
