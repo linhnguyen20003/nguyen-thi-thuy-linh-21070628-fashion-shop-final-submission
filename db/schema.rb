@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_12_084103) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_15_075401) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -158,6 +158,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_12_084103) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stocks", force: :cascade do |t|
+    t.string "product_name"
+    t.boolean "available"
+    t.boolean "location"
+    t.integer "quantity"
+    t.integer "productinfomation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["productinfomation_id"], name: "index_stocks_on_productinfomation_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -181,4 +192,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_12_084103) do
   add_foreign_key "orders", "products"
   add_foreign_key "payment_informations", "infomations"
   add_foreign_key "payments", "customers"
+  add_foreign_key "stocks", "productinfomations"
 end
