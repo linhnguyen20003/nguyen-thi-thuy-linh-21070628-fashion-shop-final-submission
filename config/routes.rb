@@ -1,9 +1,6 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :stocks
-  resources :employees
-  resources :deliveries
   resources :order_informations
   resources :product_infomations
   resources :payment_informations
@@ -18,7 +15,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  root to: 'home#index'
+  root to: 'order_informations#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

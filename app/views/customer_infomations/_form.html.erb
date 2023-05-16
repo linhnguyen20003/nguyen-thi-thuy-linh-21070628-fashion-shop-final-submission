@@ -37,7 +37,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :address, class: label_class %>
-          <%= form.text_field :address, class: input_class %>
+          <%= form.select :infomation_id, options_from_collection_for_select(Infomation.all, 'id', 'name', selected = infomation.order_information_id), class: label_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>
