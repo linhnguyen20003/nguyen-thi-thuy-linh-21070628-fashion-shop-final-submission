@@ -17,7 +17,7 @@ class OrderInformationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order_information" do
     assert_difference("OrderInformation.count") do
-      post order_informations_url, params: { order_information: { date_order_placed: @order_information.date_order_placed, information_id: @order_information.information_id, order_status_code: @order_information.order_status_code } }
+      post order_informations_url, params: { order_information: { date_order_placed: @order_information.date_order_placed, infomation_id: @order_information.infomation_id, order_status_code: @order_information.order_status_code } }
     end
 
     assert_redirected_to order_information_url(OrderInformation.last)
@@ -34,7 +34,7 @@ class OrderInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order_information" do
-    patch order_information_url(@order_information), params: { order_information: { date_order_placed: @order_information.date_order_placed, information_id: @order_information.information_id, order_status_code: @order_information.order_status_code } }
+    patch order_information_url(@order_information), params: { order_information: { date_order_placed: @order_information.date_order_placed, infomation_id: @order_information.infomation_id, order_status_code: @order_information.order_status_code } }
     assert_redirected_to order_information_url(@order_information)
   end
 

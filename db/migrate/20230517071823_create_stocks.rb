@@ -3,9 +3,9 @@ class CreateStocks < ActiveRecord::Migration[7.0]
     create_table :stocks do |t|
       t.string :product_name
       t.boolean :available
-      t.boolean :location
+      t.string :location
       t.integer :quantity
-      t.references :productinfomation, null: false, foreign_key: true
+      t.references :product_infomation, null: false, foreign_key: true
 
       t.timestamps
     end

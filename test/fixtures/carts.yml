@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_of_creation: 2023-05-17 14:40:06
+  last_updated: 2023-05-17 14:40:06
+  cart_item: one
+  total_price: 1.5
+
+two:
+  date_of_creation: 2023-05-17 14:40:06
+  last_updated: 2023-05-17 14:40:06
+  cart_item: two
+  total_price: 1.5

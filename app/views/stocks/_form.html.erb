@@ -21,15 +21,15 @@
       </div>
   <div class="mb-6">
         <%= form.label :location, class: label_class %>
-          <%= form.check_box :location, class: input_class %>
+          <%= form.text_field :location, class: input_class %>
       </div>
   <div class="mb-6">
         <%= form.label :quantity, class: label_class %>
           <%= form.number_field :quantity, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :productinfomation_id, class: label_class %>
-          <%= form.text_field :productinfomation_id, class: input_class %>
+        <%= form.label :product_infomation_id, class: label_class %>
+          <%= form.select :product_infomation_id, options_from_collection_for_select(Product_infomation.all, 'id', 'product_name', selected = product_information.infomation_id), class: label_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

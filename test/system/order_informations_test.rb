@@ -15,7 +15,7 @@ class OrderInformationsTest < ApplicationSystemTestCase
     click_on "New order information"
 
     fill_in "Date order placed", with: @order_information.date_order_placed
-    fill_in "Information", with: @order_information.information_id
+    fill_in "Infomation", with: @order_information.infomation_id
     fill_in "Order status code", with: @order_information.order_status_code
     click_on "Create Order information"
 
@@ -28,7 +28,7 @@ class OrderInformationsTest < ApplicationSystemTestCase
     click_on "Edit this order information", match: :first
 
     fill_in "Date order placed", with: @order_information.date_order_placed
-    fill_in "Information", with: @order_information.information_id
+    fill_in "Infomation", with: @order_information.infomation_id
     fill_in "Order status code", with: @order_information.order_status_code
     click_on "Update Order information"
 

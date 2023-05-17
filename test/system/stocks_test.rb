@@ -15,9 +15,9 @@ class StocksTest < ApplicationSystemTestCase
     click_on "New stock"
 
     check "Available" if @stock.available
-    check "Location" if @stock.location
+    fill_in "Location", with: @stock.location
+    fill_in "Product infomation", with: @stock.product_infomation_id
     fill_in "Product name", with: @stock.product_name
-    fill_in "Productinfomation", with: @stock.productinfomation_id
     fill_in "Quantity", with: @stock.quantity
     click_on "Create Stock"
 
@@ -30,9 +30,9 @@ class StocksTest < ApplicationSystemTestCase
     click_on "Edit this stock", match: :first
 
     check "Available" if @stock.available
-    check "Location" if @stock.location
+    fill_in "Location", with: @stock.location
+    fill_in "Product infomation", with: @stock.product_infomation_id
     fill_in "Product name", with: @stock.product_name
-    fill_in "Productinfomation", with: @stock.productinfomation_id
     fill_in "Quantity", with: @stock.quantity
     click_on "Update Stock"
 

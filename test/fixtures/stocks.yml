@@ -3,13 +3,13 @@
 one:
   product_name: MyString
   available: false
-  location: false
+  location: MyString
   quantity: 1
-  productinfomation: one
+  product_infomation: one
 
 two:
   product_name: MyString
   available: false
-  location: false
+  location: MyString
   quantity: 1
-  productinfomation: two
+  product_infomation: two
