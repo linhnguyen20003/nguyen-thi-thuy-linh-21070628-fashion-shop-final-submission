@@ -25,7 +25,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :cart_id, class: label_class %>
-          <%= form.text_field :cart_id, class: input_class %>
+          <%= form.select :cart_id, options_from_collection_for_select(Cart.all, 'id', 'name', selected = 1), class: label_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

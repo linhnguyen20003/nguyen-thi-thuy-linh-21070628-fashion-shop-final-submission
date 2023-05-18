@@ -14,11 +14,9 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employees_url
     click_on "New employee"
 
-    fill_in "Address", with: @employee.address
+    fill_in "Contact", with: @employee.contact
     fill_in "Email", with: @employee.email
-    fill_in "Name", with: @employee.name
-    fill_in "Order information", with: @employee.order_information_id
-    fill_in "Phone number", with: @employee.phone_number
+    fill_in "Employee name", with: @employee.employee_name
     fill_in "Position", with: @employee.position
     click_on "Create Employee"
 
@@ -30,11 +28,9 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employee_url(@employee)
     click_on "Edit this employee", match: :first
 
-    fill_in "Address", with: @employee.address
+    fill_in "Contact", with: @employee.contact
     fill_in "Email", with: @employee.email
-    fill_in "Name", with: @employee.name
-    fill_in "Order information", with: @employee.order_information_id
-    fill_in "Phone number", with: @employee.phone_number
+    fill_in "Employee name", with: @employee.employee_name
     fill_in "Position", with: @employee.position
     click_on "Update Employee"
 

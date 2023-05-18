@@ -12,28 +12,20 @@
 <% end %>
 
   <div class="mb-6">
-        <%= form.label :name, class: label_class %>
-          <%= form.text_field :name, class: input_class %>
+        <%= form.label :employee_name, class: label_class %>
+          <%= form.text_field :employee_name, class: input_class %>
       </div>
   <div class="mb-6">
         <%= form.label :position, class: label_class %>
           <%= form.text_field :position, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :phone_number, class: label_class %>
-          <%= form.number_field :phone_number, class: input_class %>
-      </div>
-  <div class="mb-6">
         <%= form.label :email, class: label_class %>
           <%= form.text_field :email, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :address, class: label_class %>
-          <%= form.text_field :address, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :order_information_id, class: label_class %>
-          <%= form.text_field :order_information_id, class: input_class %>
+        <%= form.label :contact, class: label_class %>
+          <%= form.number_field :contact, class: input_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>
