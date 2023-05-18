@@ -3,7 +3,8 @@ class CreateCartItems < ActiveRecord::Migration[7.0]
     create_table :cart_items do |t|
       t.string :product_name
       t.integer :quantity
-      t.float :price
+      t.decimal :price
+      t.references :cart, null: false, foreign_key: true
 
       t.timestamps
     end

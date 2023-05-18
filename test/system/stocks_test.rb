@@ -17,7 +17,6 @@ class StocksTest < ApplicationSystemTestCase
     check "Available" if @stock.available
     fill_in "Location", with: @stock.location
     fill_in "Product infomation", with: @stock.product_infomation_id
-    fill_in "Product name", with: @stock.product_name
     fill_in "Quantity", with: @stock.quantity
     click_on "Create Stock"
 
@@ -32,7 +31,6 @@ class StocksTest < ApplicationSystemTestCase
     check "Available" if @stock.available
     fill_in "Location", with: @stock.location
     fill_in "Product infomation", with: @stock.product_infomation_id
-    fill_in "Product name", with: @stock.product_name
     fill_in "Quantity", with: @stock.quantity
     click_on "Update Stock"
 

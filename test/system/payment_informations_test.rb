@@ -14,6 +14,7 @@ class PaymentInformationsTest < ApplicationSystemTestCase
     visit payment_informations_url
     click_on "New payment information"
 
+    fill_in "Email", with: @payment_information.email
     fill_in "Infomation", with: @payment_information.infomation_id
     fill_in "Invoice number", with: @payment_information.invoice_number
     fill_in "Payment date", with: @payment_information.payment_date
@@ -28,6 +29,7 @@ class PaymentInformationsTest < ApplicationSystemTestCase
     visit payment_information_url(@payment_information)
     click_on "Edit this payment information", match: :first
 
+    fill_in "Email", with: @payment_information.email
     fill_in "Infomation", with: @payment_information.infomation_id
     fill_in "Invoice number", with: @payment_information.invoice_number
     fill_in "Payment date", with: @payment_information.payment_date

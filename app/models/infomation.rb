@@ -4,7 +4,6 @@ class Infomation < ApplicationRecord
 	has_many:payment_information
 	has_many:product_infomation
 	
-	validates_presence_of:customer_name, :email, :address
-	validates_uniqueness_of:email
-	validates_numericality_of:phone_number 
+	validates_presence_of:customer_name, :email, :address, :phone_number
+	validates_uniqueness_of:email, :phone_number 
 end

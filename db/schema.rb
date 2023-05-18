@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_17_074006) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_18_093032) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -52,29 +52,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_074006) do
   create_table "cart_items", force: :cascade do |t|
     t.string "product_name"
     t.integer "quantity"
-    t.float "price"
+    t.decimal "price"
+    t.integer "cart_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
   end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "date_of_creation"
     t.datetime "last_updated"
-    t.integer "cart_item_id", null: false
-    t.float "total_price"
+    t.decimal "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_item_id"], name: "index_carts_on_cart_item_id"
   end
 
   create_table "deliveries", force: :cascade do |t|
     t.decimal "cost"
     t.string "shipping_method"
-    t.datetime "date"
-    t.integer "order_information_id", null: false
+    t.time "date"
+    t.integer "infomation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_information_id"], name: "index_deliveries_on_order_information_id"
+    t.index ["infomation_id"], name: "index_deliveries_on_infomation_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -122,7 +122,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_074006) do
   create_table "payment_informations", force: :cascade do |t|
     t.integer "invoice_number"
     t.string "type"
-    t.datetime "payment_date", precision: nil
+    t.datetime "payment_date"
+    t.string "email"
     t.integer "infomation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -151,11 +152,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_074006) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.string "product_name"
+    t.integer "product_infomation_id", null: false
     t.boolean "available"
     t.string "location"
     t.integer "quantity"
-    t.integer "product_infomation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_infomation_id"], name: "index_stocks_on_product_infomation_id"
@@ -178,8 +178,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_074006) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "carts", "cart_items"
-  add_foreign_key "deliveries", "order_informations"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "deliveries", "infomations"
   add_foreign_key "employees", "order_informations"
   add_foreign_key "order_informations", "infomations"
   add_foreign_key "payment_informations", "infomations"

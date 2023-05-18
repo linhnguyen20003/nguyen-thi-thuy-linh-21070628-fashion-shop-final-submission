@@ -1,15 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  product_name: MyString
+  product_infomation: one
   available: false
   location: MyString
   quantity: 1
-  product_infomation: one
 
 two:
-  product_name: MyString
+  product_infomation: two
   available: false
   location: MyString
   quantity: 1
-  product_infomation: two

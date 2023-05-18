@@ -16,7 +16,7 @@ class DeliveriesTest < ApplicationSystemTestCase
 
     fill_in "Cost", with: @delivery.cost
     fill_in "Date", with: @delivery.date
-    fill_in "Order information", with: @delivery.order_information_id
+    fill_in "Infomation", with: @delivery.infomation_id
     fill_in "Shipping method", with: @delivery.shipping_method
     click_on "Create Delivery"
 
@@ -30,7 +30,7 @@ class DeliveriesTest < ApplicationSystemTestCase
 
     fill_in "Cost", with: @delivery.cost
     fill_in "Date", with: @delivery.date
-    fill_in "Order information", with: @delivery.order_information_id
+    fill_in "Infomation", with: @delivery.infomation_id
     fill_in "Shipping method", with: @delivery.shipping_method
     click_on "Update Delivery"
 

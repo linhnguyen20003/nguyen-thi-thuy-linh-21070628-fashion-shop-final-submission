@@ -14,7 +14,6 @@ class CartsTest < ApplicationSystemTestCase
     visit carts_url
     click_on "New cart"
 
-    fill_in "Cart item", with: @cart.cart_item_id
     fill_in "Date of creation", with: @cart.date_of_creation
     fill_in "Last updated", with: @cart.last_updated
     fill_in "Total price", with: @cart.total_price
@@ -28,7 +27,6 @@ class CartsTest < ApplicationSystemTestCase
     visit cart_url(@cart)
     click_on "Edit this cart", match: :first
 
-    fill_in "Cart item", with: @cart.cart_item_id
     fill_in "Date of creation", with: @cart.date_of_creation
     fill_in "Last updated", with: @cart.last_updated
     fill_in "Total price", with: @cart.total_price

@@ -17,7 +17,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cart" do
     assert_difference("Cart.count") do
-      post carts_url, params: { cart: { cart_item_id: @cart.cart_item_id, date_of_creation: @cart.date_of_creation, last_updated: @cart.last_updated, total_price: @cart.total_price } }
+      post carts_url, params: { cart: { date_of_creation: @cart.date_of_creation, last_updated: @cart.last_updated, total_price: @cart.total_price } }
     end
 
     assert_redirected_to cart_url(Cart.last)
@@ -34,7 +34,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cart" do
-    patch cart_url(@cart), params: { cart: { cart_item_id: @cart.cart_item_id, date_of_creation: @cart.date_of_creation, last_updated: @cart.last_updated, total_price: @cart.total_price } }
+    patch cart_url(@cart), params: { cart: { date_of_creation: @cart.date_of_creation, last_updated: @cart.last_updated, total_price: @cart.total_price } }
     assert_redirected_to cart_url(@cart)
   end
 

@@ -24,12 +24,13 @@
           <%= form.datetime_field :payment_date, class: input_class %>
       </div>
   <div class="mb-6">
+        <%= form.label :email, class: label_class %>
+          <%= form.text_field :email, class: input_class %>
+      </div>
+  <div class="mb-6">
         <%= form.label :infomation_id, class: label_class %>
-          <%= form.text_field :infomation_id, class: input_class %>
           <%= form.select :infomation_id, options_from_collection_for_select(Infomation.all, 'id', 'customer_name', selected = payment_information.infomation_id), class: label_class %>
       </div>
-
-
 
 <%= form.submit class: button_class(theme: 'primary') %>
 
